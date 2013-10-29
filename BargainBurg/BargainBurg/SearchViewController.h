@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SearchViewController : UIViewController
+@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
