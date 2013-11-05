@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9167C5A18281DFF00B96756 /* CategoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9167C5918281DFF00B96756 /* CategoryDetailViewController.m */; };
+		C9167C5D1828246400B96756 /* CompanyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9167C5C1828246400B96756 /* CompanyDetailViewController.m */; };
 		C999C53A181F8CA800644C20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C999C539181F8CA800644C20 /* Foundation.framework */; };
 		C999C53C181F8CA800644C20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C999C53B181F8CA800644C20 /* CoreGraphics.framework */; };
 		C999C53E181F8CA800644C20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C999C53D181F8CA800644C20 /* UIKit.framework */; };
@@ -15,8 +17,8 @@
 		C999C54A181F8CA800644C20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C999C549181F8CA800644C20 /* AppDelegate.m */; };
 		C999C54D181F8CA800644C20 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C999C54B181F8CA800644C20 /* Main_iPhone.storyboard */; };
 		C999C550181F8CA800644C20 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C999C54E181F8CA800644C20 /* Main_iPad.storyboard */; };
-		C999C553181F8CA800644C20 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C999C552181F8CA800644C20 /* FirstViewController.m */; };
-		C999C556181F8CA800644C20 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C999C555181F8CA800644C20 /* SecondViewController.m */; };
+		C999C553181F8CA800644C20 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C999C552181F8CA800644C20 /* CategoriesViewController.m */; };
+		C999C556181F8CA800644C20 /* CompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C999C555181F8CA800644C20 /* CompaniesViewController.m */; };
 		C999C558181F8CA800644C20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C999C557181F8CA800644C20 /* Images.xcassets */; };
 		C999C55F181F8CA800644C20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C999C55E181F8CA800644C20 /* XCTest.framework */; };
 		C999C560181F8CA800644C20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C999C539181F8CA800644C20 /* Foundation.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9167C5818281DFF00B96756 /* CategoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDetailViewController.h; sourceTree = "<group>"; };
+		C9167C5918281DFF00B96756 /* CategoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDetailViewController.m; sourceTree = "<group>"; };
+		C9167C5B1828246400B96756 /* CompanyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyDetailViewController.h; sourceTree = "<group>"; };
+		C9167C5C1828246400B96756 /* CompanyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyDetailViewController.m; sourceTree = "<group>"; };
 		C999C536181F8CA800644C20 /* BargainBurg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BargainBurg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C999C539181F8CA800644C20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C999C53B181F8CA800644C20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,10 +55,10 @@
 		C999C549181F8CA800644C20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C999C54C181F8CA800644C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		C999C54F181F8CA800644C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		C999C551181F8CA800644C20 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		C999C552181F8CA800644C20 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		C999C554181F8CA800644C20 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		C999C555181F8CA800644C20 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C999C551181F8CA800644C20 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		C999C552181F8CA800644C20 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		C999C554181F8CA800644C20 /* CompaniesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompaniesViewController.h; sourceTree = "<group>"; };
+		C999C555181F8CA800644C20 /* CompaniesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompaniesViewController.m; sourceTree = "<group>"; };
 		C999C557181F8CA800644C20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C999C55D181F8CA800644C20 /* BargainBurgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BargainBurgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C999C55E181F8CA800644C20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -124,10 +130,14 @@
 				C999C549181F8CA800644C20 /* AppDelegate.m */,
 				C999C54B181F8CA800644C20 /* Main_iPhone.storyboard */,
 				C999C54E181F8CA800644C20 /* Main_iPad.storyboard */,
-				C999C551181F8CA800644C20 /* FirstViewController.h */,
-				C999C552181F8CA800644C20 /* FirstViewController.m */,
-				C999C554181F8CA800644C20 /* SecondViewController.h */,
-				C999C555181F8CA800644C20 /* SecondViewController.m */,
+				C999C551181F8CA800644C20 /* CategoriesViewController.h */,
+				C999C552181F8CA800644C20 /* CategoriesViewController.m */,
+				C9167C5818281DFF00B96756 /* CategoryDetailViewController.h */,
+				C9167C5918281DFF00B96756 /* CategoryDetailViewController.m */,
+				C999C554181F8CA800644C20 /* CompaniesViewController.h */,
+				C999C555181F8CA800644C20 /* CompaniesViewController.m */,
+				C9167C5B1828246400B96756 /* CompanyDetailViewController.h */,
+				C9167C5C1828246400B96756 /* CompanyDetailViewController.m */,
 				C999C574181F8D3C00644C20 /* SearchViewController.h */,
 				C999C575181F8D3C00644C20 /* SearchViewController.m */,
 				C999C557181F8CA800644C20 /* Images.xcassets */,
@@ -263,10 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C999C556181F8CA800644C20 /* SecondViewController.m in Sources */,
+				C999C556181F8CA800644C20 /* CompaniesViewController.m in Sources */,
+				C9167C5D1828246400B96756 /* CompanyDetailViewController.m in Sources */,
+				C9167C5A18281DFF00B96756 /* CategoryDetailViewController.m in Sources */,
 				C999C576181F8D3C00644C20 /* SearchViewController.m in Sources */,
 				C999C54A181F8CA800644C20 /* AppDelegate.m in Sources */,
-				C999C553181F8CA800644C20 /* FirstViewController.m in Sources */,
+				C999C553181F8CA800644C20 /* CategoriesViewController.m in Sources */,
 				C999C546181F8CA800644C20 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +498,7 @@
 				C999C570181F8CA800644C20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C999C571181F8CA800644C20 /* Build configuration list for PBXNativeTarget "BargainBurgTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +507,7 @@
 				C999C573181F8CA800644C20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

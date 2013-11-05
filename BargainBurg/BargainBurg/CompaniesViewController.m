@@ -1,21 +1,22 @@
 //
-//  SecondViewController.m
+//  CompaniesViewController.m
 //  BargainBurg
 //
 //  Created by Matt Dallmeyer on 10/29/13.
 //  Copyright (c) 2013 Matt Dallmeyer. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "CompaniesViewController.h"
+#import "CompanyDetailViewController.h"
 
-@interface SecondViewController ()
+@interface CompaniesViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
 @property (nonatomic, retain) NSMutableArray *companiesNames;
 @property (nonatomic, retain) NSMutableArray *companiesIds;
 @property (nonatomic, retain) IBOutlet UITableView *companiesTable;
 @end
 
-@implementation SecondViewController
+@implementation CompaniesViewController
 @synthesize responseData = _responseData;
 @synthesize companiesIds = _companiesIds;
 @synthesize companiesNames = _companiesNames;
@@ -29,6 +30,15 @@
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [super viewDidLoad];
     NSLog(@"viewdidload");
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"CompanyToDetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        CompanyDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.companyId = [[self.companiesIds objectAtIndex:indexPath.row] intValue];
+        destViewController.companyName = [self.companiesNames objectAtIndex:indexPath.row];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -78,12 +88,12 @@
     
     // convert to JSON
     NSError *myError = nil;
-    NSDictionary *categoriesDict = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    NSDictionary *companiesDict = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     
     self.companiesNames = [[NSMutableArray alloc] init];
     self.companiesIds = [[NSMutableArray alloc] init];
     
-    for (id key in categoriesDict)
+    for (id key in companiesDict)
     {
         id name = [key objectForKey:@"name"];
         id idNum = [key objectForKey:@"id"];

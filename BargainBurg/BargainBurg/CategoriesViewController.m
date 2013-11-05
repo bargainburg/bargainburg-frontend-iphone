@@ -1,21 +1,22 @@
 //
-//  FirstViewController.m
+//  CategoriesViewController.m
 //  BargainBurg
 //
 //  Created by Matt Dallmeyer on 10/29/13.
 //  Copyright (c) 2013 Matt Dallmeyer. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "CategoriesViewController.h"
+#import "CategoryDetailViewController.h"
 
-@interface FirstViewController ()
+@interface CategoriesViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
 @property (nonatomic, retain) NSMutableArray *categoriesNames;
 @property (nonatomic, retain) NSMutableArray *categoriesIds;
 @property (nonatomic, retain) IBOutlet UITableView *categoriesTable;
 @end
 
-@implementation FirstViewController
+@implementation CategoriesViewController
 @synthesize responseData = _responseData;
 @synthesize categoriesNames = _categoriesNames;
 @synthesize categoriesIds = _categoriesIds;
@@ -29,6 +30,15 @@
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [super viewDidLoad];
     NSLog(@"viewdidload");
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showCategoryDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        CategoryDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.categoryId = [[self.categoriesIds objectAtIndex:indexPath.row] intValue];
+        destViewController.categoryName = [self.categoriesNames objectAtIndex:indexPath.row];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  CompaniesViewController.h
 //  BargainBurg
 //
 //  Created by Matt Dallmeyer on 10/29/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CompaniesViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  CategoriesViewController.h
 //  BargainBurg
 //
 //  Created by Matt Dallmeyer on 10/29/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CategoriesViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
