@@ -9,6 +9,9 @@
 #import "CategoriesViewController.h"
 #import "CategoryDetailViewController.h"
 
+//declare this once here, and as an extern variable in any other *.m making API calls
+NSString *apiUrl = @"http://api.dev.bargainburg.co/v1/";
+
 @interface CategoriesViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
 @property (nonatomic, retain) NSMutableArray *categoriesNames;
@@ -26,7 +29,7 @@
 {    
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@"http://api.bargainburg.co/v1/categories"]];
+                             [NSURL URLWithString:[NSString stringWithFormat:@"%@categories", apiUrl]]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [super viewDidLoad];
     NSLog(@"viewdidload");

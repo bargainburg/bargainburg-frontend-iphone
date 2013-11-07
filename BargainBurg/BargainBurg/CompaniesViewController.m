@@ -9,6 +9,8 @@
 #import "CompaniesViewController.h"
 #import "CompanyDetailViewController.h"
 
+extern NSString *apiUrl;
+
 @interface CompaniesViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
 @property (nonatomic, retain) NSMutableArray *companiesNames;
@@ -26,7 +28,7 @@
 {
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@"http://api.bargainburg.co/v1/merchants"]];
+                             [NSURL URLWithString:[NSString stringWithFormat:@"%@merchants", apiUrl]]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [super viewDidLoad];
     NSLog(@"viewdidload");

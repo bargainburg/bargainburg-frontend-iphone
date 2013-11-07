@@ -26,6 +26,7 @@
 		C999C569181F8CA800644C20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C999C567181F8CA800644C20 /* InfoPlist.strings */; };
 		C999C56B181F8CA800644C20 /* BargainBurgTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C999C56A181F8CA800644C20 /* BargainBurgTests.m */; };
 		C999C576181F8D3C00644C20 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C999C575181F8D3C00644C20 /* SearchViewController.m */; };
+		C9D4DE25182B0EA000AD3BA5 /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D4DE24182B0EA000AD3BA5 /* CouponViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		C999C56A181F8CA800644C20 /* BargainBurgTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BargainBurgTests.m; sourceTree = "<group>"; };
 		C999C574181F8D3C00644C20 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		C999C575181F8D3C00644C20 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		C9D4DE23182B0EA000AD3BA5 /* CouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponViewController.h; sourceTree = "<group>"; };
+		C9D4DE24182B0EA000AD3BA5 /* CouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				C9167C5C1828246400B96756 /* CompanyDetailViewController.m */,
 				C999C574181F8D3C00644C20 /* SearchViewController.h */,
 				C999C575181F8D3C00644C20 /* SearchViewController.m */,
+				C9D4DE23182B0EA000AD3BA5 /* CouponViewController.h */,
+				C9D4DE24182B0EA000AD3BA5 /* CouponViewController.m */,
 				C999C557181F8CA800644C20 /* Images.xcassets */,
 				C999C540181F8CA800644C20 /* Supporting Files */,
 			);
@@ -277,6 +282,7 @@
 				C9167C5D1828246400B96756 /* CompanyDetailViewController.m in Sources */,
 				C9167C5A18281DFF00B96756 /* CategoryDetailViewController.m in Sources */,
 				C999C576181F8D3C00644C20 /* SearchViewController.m in Sources */,
+				C9D4DE25182B0EA000AD3BA5 /* CouponViewController.m in Sources */,
 				C999C54A181F8CA800644C20 /* AppDelegate.m in Sources */,
 				C999C553181F8CA800644C20 /* CategoriesViewController.m in Sources */,
 				C999C546181F8CA800644C20 /* main.m in Sources */,

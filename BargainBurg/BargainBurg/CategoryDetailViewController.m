@@ -9,6 +9,8 @@
 #import "CategoryDetailViewController.h"
 #import "CompanyDetailViewController.h"
 
+extern NSString *apiUrl;
+
 @interface CategoryDetailViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
 @property (nonatomic, retain) NSMutableArray *companiesNames;
@@ -40,7 +42,7 @@
     self.title = self.categoryName;
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[NSString stringWithFormat:@"http://api.bargainburg.co/v1/categories/%d/merchants", self.categoryId]]];
+                             [NSURL URLWithString:[NSString stringWithFormat:@"%@categories/%d/merchants", apiUrl, self.categoryId]]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [super viewDidLoad];
     

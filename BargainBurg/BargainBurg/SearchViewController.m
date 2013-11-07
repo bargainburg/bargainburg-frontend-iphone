@@ -7,6 +7,10 @@
 //
 
 #import "SearchViewController.h"
+#import "CompanyDetailViewController.h"
+#import "CouponViewController.h"
+
+extern NSString *apiUrl;
 
 @interface SearchViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
@@ -46,7 +50,7 @@
         [self.resultIds removeAllObjects];
         
         NSURLRequest *requestCompanyInfo = [NSURLRequest requestWithURL:
-                                            [NSURL URLWithString:[NSString stringWithFormat:@"http://api.bargainburg.co/v1/search?query=%@", searchText]]];
+                                            [NSURL URLWithString:[NSString stringWithFormat:@"%@search?query=%@", apiUrl, searchText]]];
         [[NSURLConnection alloc] initWithRequest:requestCompanyInfo delegate:self];
     }
 }
@@ -66,26 +70,37 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.searchTable = tableView;
-    static NSString *searchTableIdentifier = @"ResultsCell";
-        
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:searchTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchTableIdentifier];
-    }
-    
-    cell.textLabel.text = [self.resultNames objectAtIndex:[indexPath row]];
     
     if ([[self.resultTypes objectAtIndex:[indexPath row]] isEqualToString:@"coupon"])
     {
+        static NSString *searchTableIdentifier = @"ResultCellCoupon";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:searchTableIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchTableIdentifier];
+        }
+        
+        cell.textLabel.text = [self.resultNames objectAtIndex:[indexPath row]];
         cell.imageView.image = [UIImage imageNamed:@"coupon"];
+        
+        return cell;
     }
     else
     {
+        static NSString *searchTableIdentifier = @"ResultCellCompany";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:searchTableIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchTableIdentifier];
+        }
+        
+        cell.textLabel.text = [self.resultNames objectAtIndex:[indexPath row]];
         cell.imageView.image = [UIImage imageNamed:@"companies"];
+        
+        return cell;
     }
-
-    return cell;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -121,6 +136,22 @@
     }
     
     [self.searchTable reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"SearchCouponSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        CouponViewController *destViewController = segue.destinationViewController;
+        destViewController.couponId = [[self.resultIds objectAtIndex:indexPath.row] intValue];
+        destViewController.couponName = [self.resultNames objectAtIndex:indexPath.row];
+    }
+    else if ([segue.identifier isEqualToString:@"SearchCompanySegue"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        CompanyDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.companyId = [[self.resultIds objectAtIndex:indexPath.row] intValue];
+        destViewController.companyName = [self.resultNames objectAtIndex:indexPath.row];
+    }
 }
 
 

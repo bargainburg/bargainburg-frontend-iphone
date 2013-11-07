@@ -7,6 +7,9 @@
 //
 
 #import "CompanyDetailViewController.h"
+#import "CouponViewController.h"
+
+extern NSString *apiUrl;
 
 @interface CompanyDetailViewController ()
 @property (nonatomic, strong) NSMutableData *responseData;
@@ -53,11 +56,11 @@
     self.responseData = [NSMutableData data];
     
     NSURLRequest *requestCompanyInfo = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[NSString stringWithFormat:@"http://api.bargainburg.co/v1/merchants/%d", self.companyId]]];
+                             [NSURL URLWithString:[NSString stringWithFormat:@"%@merchants/%d", apiUrl, self.companyId]]];
     [[NSURLConnection alloc] initWithRequest:requestCompanyInfo delegate:self];
 
     NSURLRequest *requestCoupons = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:[NSString stringWithFormat:@"http://api.bargainburg.co/v1/merchants/%d/coupons", self.companyId]]];
+                             [NSURL URLWithString:[NSString stringWithFormat:@"%@merchants/%d/coupons", apiUrl, self.companyId]]];
     [[NSURLConnection alloc] initWithRequest:requestCoupons delegate:self];
     
     [super viewDidLoad];
@@ -102,16 +105,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.companyTable = tableView;
-    static NSString *companyTableIdentifier = @"CompanyTableItem";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:companyTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:companyTableIdentifier];
-    }
     
     if (indexPath.section == 0)
-    {
+    {        
+        static NSString *companyTableIdentifier = @"CompanyDetailsCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:companyTableIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:companyTableIdentifier];
+        }
+        
         switch (indexPath.row) {
             case 0:
                 cell.imageView.image = [UIImage imageNamed:@"phone"];
@@ -137,14 +140,23 @@
             default:
                 break;
         }
+        
+        return cell;
     }
     else
     {
+        static NSString *companyTableIdentifier = @"CompanyCouponCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:companyTableIdentifier];
+    
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:companyTableIdentifier];
+        }
+        
         cell.imageView.image = [UIImage imageNamed:@"coupon"];
         cell.textLabel.text = [self.couponNames objectAtIndex:[indexPath row]];
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -203,6 +215,15 @@
         {
             self.oneResponse = true;
         }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"CompanyToCouponSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        CouponViewController *destViewController = segue.destinationViewController;
+        destViewController.couponId = [[self.couponIds objectAtIndex:indexPath.row] intValue];
+        destViewController.couponName = [self.couponNames objectAtIndex:indexPath.row];
     }
 }
 

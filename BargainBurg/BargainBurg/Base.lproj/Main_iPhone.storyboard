@@ -55,7 +55,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="zgG-Vn-BtS" kind="push" identifier="CategoryToCompanySegue" id="aD3-aa-Gw6"/>
+                                    <segue destination="j10-9i-nNM" kind="push" identifier="CategoryToCompanySegue" id="qtH-of-ntN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,40 +64,44 @@
                             <outlet property="delegate" destination="3Yt-zh-7Ov" id="9Y3-4M-1hr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="a55-Cr-CEw"/>
+                    <navigationItem key="navigationItem" id="a55-Cr-CEw">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="WMd-GK-hSA"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z70-Nn-hBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1521" y="-549"/>
         </scene>
-        <!--Company Detail View Controller-->
-        <scene sceneID="3H6-IE-Lak">
+        <!--Coupon View Controller-->
+        <scene sceneID="N4y-E6-VX4">
             <objects>
-                <tableViewController id="zgG-Vn-BtS" customClass="CompanyDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Fq-Is-9AF">
+                <viewController id="83u-hU-A86" customClass="CouponViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EGP-eq-a02"/>
+                        <viewControllerLayoutGuide type="bottom" id="9dE-AM-GlV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pDn-6u-exd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyDetailCell" id="6nw-B5-dkg">
-                                <rect key="frame" x="0.0" y="86" width="320" height="40"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6nw-B5-dkg" id="1dc-lN-q0z">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zgG-Vn-BtS" id="I4M-aC-JRy"/>
-                            <outlet property="delegate" destination="zgG-Vn-BtS" id="qQc-Xs-qtx"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="sjB-5n-Smc"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="na1-Pg-xjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcl-H1-Nvi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mEC-Zu-ETT"/>
+                    <connections>
+                        <outlet property="couponDetails" destination="vcl-H1-Nvi" id="iQ7-5O-zet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Nq-nz-rye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="-552"/>
+            <point key="canvasLocation" x="2580" y="160"/>
         </scene>
         <!--Navigation Controller - Categories-->
         <scene sceneID="VNo-ZI-Dwv">
@@ -141,7 +145,9 @@
                             <outlet property="delegate" destination="ik9-cg-cCI" id="b2F-wm-KQO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Companies" id="dOC-41-RHy"/>
+                    <navigationItem key="navigationItem" title="Companies" id="dOC-41-RHy">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="dCs-5v-cwR"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iii-mK-PKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,7 +208,6 @@
         <!--Search View Controller-->
         <scene sceneID="JR4-we-oEJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WQ0-2I-J39" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="qyn-8f-hit" customClass="SearchViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bu9-EK-bQi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -217,13 +222,27 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultCell" id="DqV-zZ-Wpn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultCellCoupon" id="DqV-zZ-Wpn">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DqV-zZ-Wpn" id="BvI-MH-T0t">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="FtE-g7-MZp" kind="push" identifier="SearchCouponSegue" id="V7b-bC-PfZ"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultCellCompany" id="1C9-Sp-hrw">
+                                <rect key="frame" x="0.0" y="174" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1C9-Sp-hrw" id="Qco-2s-wvO">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="SpM-es-biy" kind="push" identifier="SearchCompanySegue" id="Xyb-i5-Ifp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -236,6 +255,7 @@
                         <outlet property="searchDisplayController" destination="Heh-ss-kta" id="RLJ-is-ADo"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQ0-2I-J39" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="Heh-ss-kta">
                     <connections>
                         <outlet property="delegate" destination="qyn-8f-hit" id="F1j-Nd-Ujv"/>
@@ -250,16 +270,28 @@
         <!--Company Detail View Controller-->
         <scene sceneID="I2T-H0-qXq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uzZ-2p-C5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Nkw-81-LsZ" customClass="CompanyDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rvu-X1-K9Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyDetailCell" id="F2v-qq-sCt">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyCouponCell" id="F2v-qq-sCt">
                                 <rect key="frame" x="0.0" y="86" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F2v-qq-sCt" id="YTm-Fz-qvG">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="83u-hU-A86" kind="push" identifier="CompanyToCouponSegue" id="e8p-24-z2i"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompanyDetailsCell" id="nYy-l7-fxx">
+                                <rect key="frame" x="0.0" y="126" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYy-l7-fxx" id="A4c-UV-tp6">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -274,9 +306,185 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="mUd-IE-YpB"/>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uzZ-2p-C5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1521" y="160"/>
+        </scene>
+        <!--Coupon View Controller-->
+        <scene sceneID="X57-yW-3c7">
+            <objects>
+                <viewController id="JUr-qk-CZa" customClass="CouponViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iLw-yJ-RQv"/>
+                        <viewControllerLayoutGuide type="bottom" id="ToS-7a-MVI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bcv-SB-ChE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6a-cN-4wR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oTQ-vZ-OoI"/>
+                    <connections>
+                        <outlet property="couponDetails" destination="M6a-cN-4wR" id="Plx-bt-v8w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXN-bN-2hG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2580" y="-552"/>
+        </scene>
+        <!--Coupon View Controller-->
+        <scene sceneID="bba-MX-7UU">
+            <objects>
+                <viewController id="FtE-g7-MZp" customClass="CouponViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ySR-L5-znN"/>
+                        <viewControllerLayoutGuide type="bottom" id="pCQ-Ms-kjO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3bO-YP-6Ny">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihZ-Nl-ukE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zWA-2g-WU7"/>
+                    <connections>
+                        <outlet property="couponDetails" destination="ihZ-Nl-ukE" id="Y7H-v0-P5H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKZ-qT-gDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2580" y="854"/>
+        </scene>
+        <!--Company Detail View Controller-->
+        <scene sceneID="9Sm-bh-wMo">
+            <objects>
+                <tableViewController id="SpM-es-biy" customClass="CompanyDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gar-sk-VGv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyCouponCell" id="zja-MT-lVe">
+                                <rect key="frame" x="0.0" y="86" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zja-MT-lVe" id="vAb-QK-nv1">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hMq-ud-lq7" kind="push" identifier="CompanyToCouponSegue" id="elc-qH-kaf"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompanyDetailsCell" id="vP8-Hc-WXp">
+                                <rect key="frame" x="0.0" y="126" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vP8-Hc-WXp" id="F8x-4j-E8F">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SpM-es-biy" id="LgN-1j-dMn"/>
+                            <outlet property="delegate" destination="SpM-es-biy" id="y1d-zy-eh0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="uMg-zm-727">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="hQ8-DF-XAw"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REi-5O-WK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1521" y="1282"/>
+        </scene>
+        <!--Coupon View Controller-->
+        <scene sceneID="oXi-cA-96r">
+            <objects>
+                <viewController id="hMq-ud-lq7" customClass="CouponViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jOa-2X-h5o"/>
+                        <viewControllerLayoutGuide type="bottom" id="JHR-Rr-F5l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fsw-he-sdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBJ-qa-jMr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fdl-NY-TP1"/>
+                    <connections>
+                        <outlet property="couponDetails" destination="bBJ-qa-jMr" id="fLC-sJ-7Ri"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yR-8q-bcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2580" y="1552"/>
+        </scene>
+        <!--Company Detail View Controller-->
+        <scene sceneID="5gW-vk-XLT">
+            <objects>
+                <tableViewController id="j10-9i-nNM" customClass="CompanyDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="27d-ZV-O7C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyCouponCell" id="2oq-C0-YS5">
+                                <rect key="frame" x="0.0" y="86" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2oq-C0-YS5" id="fhi-Zg-BS9">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="JUr-qk-CZa" kind="push" identifier="CompanyToCouponSegue" id="UYb-Tf-BYn"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompanyDetailsCell" id="qlF-CK-UIa">
+                                <rect key="frame" x="0.0" y="126" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qlF-CK-UIa" id="a5s-8a-NVN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="j10-9i-nNM" id="hhg-GK-jnF"/>
+                            <outlet property="delegate" destination="j10-9i-nNM" id="Sli-rK-fFo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jGD-5e-w5f">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="4Cx-TI-FmY"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luC-bf-CjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921" y="-549"/>
         </scene>
     </scenes>
     <resources>
